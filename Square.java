@@ -1,33 +1,25 @@
 public class Square {
   private double side;
-  final int MAX_SIDE_LENGTH = 10;
+  public final int MAX_SIDE_LENGTH = 10;
 
-  public double Square(double theSide) {
-    double side=theSide;
+  public Square(double theSide){
+    side = theSide;
+  }
+  public double getSide(){
     return side;
   }
-
-  public double getSide() {
-    return side;
+  public void setSide(double theSide){
+    if (theSide < MAX_SIDE_LENGTH && theSide > 0){
+      side = theSide;
+    }
   }
-
-  public double setSide(double theSide) {
-    side=theSide;
-    return side;
-  }
-
-  public String toString() {
+  public String toString(){
     return "Square with side length = " + side;
   }
-
-  public double area() {
-    double area=side*side;
-    return area;
+  public double area(){
+    return side * side;
   }
-
-  public double diagonal() {
-    double diagonal=Math.sqrt(2*side*side);
-    return diagonal;
+  public double diagonal(){
+    return side * 1.414;
   }
 }
-
